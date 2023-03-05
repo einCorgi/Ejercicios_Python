@@ -1,4 +1,4 @@
-def multiplication(*args):
+def multiplication(*args):  # The args parameter can receive A TUPLE
     result = 1
     for i in args:
         result *= i
