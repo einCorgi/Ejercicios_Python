@@ -1,16 +1,19 @@
-# This is a sample Python script.
+import matplotlib.pyplot as plt
+import numpy as np
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+x = np.linspace(0, 100 * np.pi, 100)
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def f(x):
+    return np.sin(7 * x) + np.cos(4 * x)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+f_values = np.vectorize(f)(x)
+
+plt.plot(x, f_values, label='sen(7x) + cos(4x)')
+# plt.plot(x, g_values, label='cos(x)')
+plt.xlabel('x')
+plt.ylabel('f(x)')
+plt.legend()
+plt.xlim([0, 300])
+plt.show()
